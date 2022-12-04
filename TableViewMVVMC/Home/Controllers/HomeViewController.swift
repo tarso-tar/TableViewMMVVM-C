@@ -32,14 +32,12 @@ class HomeViewController: UIViewController {
                 
                 switch result {
                 case .success(let posts):
-                    print("entrando case sucesso")
                     for post in posts {
                         self.postViewModels.append(PostViewModel(post: post))
                     }
                     self.homeView.newsTableView.reloadData()
                     
                 case .failure(let error):
-                    print("entrando caso de error")
                     self.coordinator?.showPostsAlert(alertTitle:  "Ops, ocorreu um erro", alertMessage: error.localizedDescription, alertActionTitle: "OK")
                     return
                 }

@@ -18,9 +18,7 @@ class NewsService: NewsServiceProtocol {
     }
     
     public func getTopNews(completion: @escaping (Result<[Post], NewsServiceError>) -> Void) {
-        print("url de teste", urlString)
         guard let url = URL(string: urlString) else {
-            print("entrando return de erro")
             return completion(.failure(NewsServiceError.invalidURL))
         }
         
@@ -31,7 +29,6 @@ class NewsService: NewsServiceProtocol {
             let decoder = JSONDecoder()
             if let safeData = data {
                 do {
-                    print("teste retorno ", safeData)
                     let results = try decoder.decode(Results.self, from: safeData)
                     return completion(.success(results.hits))
                 }
@@ -43,7 +40,6 @@ class NewsService: NewsServiceProtocol {
         
         task.resume()
     }
-
 }
 
 

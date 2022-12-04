@@ -13,5 +13,4 @@ struct Results: Decodable {
 
 struct Post: Decodable {
     let title: String
-    let url: String
 }

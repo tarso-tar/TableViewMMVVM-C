@@ -14,6 +14,8 @@ class NewsCell: UITableViewCell {
     let postTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -44,6 +46,7 @@ extension NewsCell: ViewCode {
     func setupPostTitleConstraints() {
         postTitle.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         postTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        postTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -4).isActive = true
     }
     
     func setupConstraints() {

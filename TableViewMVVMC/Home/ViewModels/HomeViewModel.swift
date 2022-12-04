@@ -18,10 +18,8 @@ class HomeViewModel {
         service.getTopNewsMock { result in
             switch result {
             case .success(let posts):
-                print("lista de posts retornados", posts)
                 completion(.success(posts))
             case .failure(let error):
-                print("ocorreu o seguinte erro", error)
                 completion(.failure(error))
             }
         }

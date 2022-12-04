@@ -47,7 +47,6 @@ class NewsServiceTests: XCTestCase {
             // Assert
             switch result {
             case .success(let posts):
-                print("Returned posts", posts)
                 XCTAssertFalse(posts.isEmpty)
                 expectation.fulfill()
             case .failure(let error):
