@@ -15,7 +15,7 @@ class HomeViewModel {
     }
     
     func getTopNews(completion: @escaping (Result<[Post], NewsServiceError>) -> Void)  {
-        service.getTopNewsMock { result in
+        service.getTopNews { result in
             switch result {
             case .success(let posts):
                 completion(.success(posts))
