@@ -22,6 +22,7 @@ class NewsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
+        self.backgroundColor = .blue
     }
     
     required init?(coder: NSCoder) {
@@ -45,8 +46,9 @@ extension NewsCell: ViewCode {
     
     func setupPostTitleConstraints() {
         postTitle.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        postTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        postTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -4).isActive = true
+        postTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+        postTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
+        postTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     func setupConstraints() {

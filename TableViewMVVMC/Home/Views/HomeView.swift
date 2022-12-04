@@ -25,6 +25,7 @@ class HomeView: UIView {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.backgroundColor = .white
+        table.rowHeight = 120
         table.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseID)
         return table
     }()
